@@ -21,6 +21,22 @@ class HomeController extends AbstractController
         ]);
     }
 
+    #[Route('/Newsletter', name: 'app_home_newsletter', methods: ['GET'])]
+    public function newsletter(HomeRepository $homeRepository): Response
+    {
+        return $this->render('home/newsletter.html.twig', [
+            'homes' => $homeRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/Contact', name: 'app_home_contact', methods: ['GET'])]
+    public function contact(HomeRepository $homeRepository): Response
+    {
+        return $this->render('home/contact.html.twig', [
+            'homes' => $homeRepository->findAll(),
+        ]);
+    }
+
     #[Route('/new', name: 'app_home_new', methods: ['GET', 'POST'])]
     public function new(Request $request, HomeRepository $homeRepository): Response
     {

@@ -1,19 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home index{% endblock %}
+{% block title %}Page d'accueil{% endblock %}
 
 {% block body %}
-    <h1>Home index</h1>
+    <h1>Joué Volley Ball</h1>
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>actions</th>
-            </tr>
+            <nav>
+                <ul>
+                    <li class="deroulant">
+                    <a href="{{ path('app_home_index') }}">Accueil</a>
+                        <ul class="sous">
+                            <li>
+                            <a href="{{ path('app_home_index') }}">Accueil</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="deroulant">
+                    <a href="{{ path('app_compte_index') }}">Compte</a>
+                        <ul class="sous">
+                            <li>
+                            <a href="{{ path('app_compte_new') }}">Création de compte</a>
+                            </li>
+                            <li>
+                            <a href="{{ path('app_compte_connexion') }}">Connexion</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ path('app_home_newsletter') }}">Newsletters</a></li>
+                    <li><a href="{{ path('app_home_contact') }}">Contact</a></li>
+                </ul>
+            </nav>
         </thead>
         <tbody>
-        {% for home in homes %}
+            <p>Les club de volley de Joué les Tours est super cool du coup venez.</p>
+            
+      {#  {% for home in homes %}
             <tr>
                 <td>{{ home.id }}</td>
                 <td>
@@ -23,11 +47,10 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="2">no records found</td>
+                <td colspan="2">Erreur</td>
             </tr>
-        {% endfor %}
+        {% endfor %} #}
         </tbody>
     </table>
 
-    <a href="{{ path('app_home_new') }}">Create new</a>
 {% endblock %}

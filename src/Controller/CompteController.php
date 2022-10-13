@@ -21,6 +21,14 @@ class CompteController extends AbstractController
         ]);
     }
 
+    #[Route('/connexion', name: 'app_compte_connexion', methods: ['GET'])]
+    public function connexion(CompteRepository $compteRepository): Response
+    {
+        return $this->render('compte/connexion.html.twig', [
+            'comptes' => $compteRepository->findAll(),
+        ]);
+    }
+
     #[Route('/new', name: 'app_compte_new', methods: ['GET', 'POST'])]
     public function new(Request $request, CompteRepository $compteRepository): Response
     {
