@@ -5,34 +5,36 @@
 {% block body %}
     <h1>Joué Volley Ball</h1>
 
-    <table class="table">
-        <thead>
-            <nav>
-                <ul>
-                    <li class="deroulant">
-                    <a href="{{ path('app_home_index') }}">Accueil</a>
+    <table class="table">   
+        <thead> 
+                <tr>
+                    <th>
+                    <a href="{{ path('app_home_index') }}">Accueils</a>
+                    </th>
+                    <th class="deroulant">
+                    <a href="{{ path('app_login') }}">Compte</a>
+                    </th>
+                    <th>
                         <ul class="sous">
                             <li>
-                            <a href="{{ path('app_home_index') }}">Accueil</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="deroulant">
-                    <a href="{{ path('app_compte_index') }}">Compte</a>
-                        <ul class="sous">
-                            <li>
-                            <a href="{{ path('app_compte_new') }}">Création de compte</a>
+                            <a href="{{ path('app_register') }}">Création de compte</a>
                             </li>
                             <li>
-                            <a href="{{ path('app_compte_connexion') }}">Connexion</a>
+                            <a href="{{ path('app_login') }}">Connexion</a>
                             </li>
                         </ul>
-                    </li>
-                    <li><a href="{{ path('app_home_newsletter') }}">Newsletters</a></li>
-                    <li><a href="{{ path('app_home_contact') }}">Contact</a></li>
-                </ul>
-            </nav>
+                    </th>
+                    <th>
+                    <a href ="{{path('app_team_index') }}">Equipe</a>
+                    </th>
+                    <th>
+                    <a href="{{ path('app_home_newsletter') }}">Newsletters</a>
+                    </th>
+                    <th>
+                    <a href="{{ path('app_home_contact') }}">Contact</a>
+                    </th>
+                </tr>
+                
         </thead>
         <tbody>
             <p>Les club de volley de Joué les Tours est super cool du coup venez.</p>
@@ -51,6 +53,6 @@
             </tr>
         {% endfor %} #}
         </tbody>
-    </table>
+    </table>    
 
 {% endblock %}
