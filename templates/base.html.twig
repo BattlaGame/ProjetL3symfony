@@ -21,9 +21,6 @@
                     <th>
                     <a href="{{ path('app_home_index') }}">Accueils</a>
                     </th>
-                    <th class="deroulant">
-                    <a href="{{ path('app_login') }}">Compte</a>
-                    </th>
                     <th>
                     <a href ="{{path('app_team_index') }}">Equipe</a>
                     </th>
@@ -34,9 +31,9 @@
                     <a href="{{ path('app_home_contact') }}">Contact</a>
                     </th>
                     {% if app.user %}
-                        <a href="{{ path('app_home_index')}}">Salut mon reuf {{app.user.name}} </a>
-                        
-                        <a href="{{ path('app_home_index') }}">Se déconnecter</a>
+                        <a href="{{ path('app_user_show', {'id': app.user.id}) }}">show</a>
+                        <p> </p>
+                        <a href="{{ path('app_logout') }}">Se déconnecter</a>
                     {% else %}
                     <a href="{{path('app_login')}}"> Se connecter </a>
                     <a href="{{ path('app_login') }}">Création de compte</a>
