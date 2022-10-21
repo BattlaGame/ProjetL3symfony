@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
@@ -13,7 +14,37 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+
     <body>
+        <table class="table">   
+                <tr>
+                    <th>
+                    <a href="{{ path('app_home_index') }}">Accueils</a>
+                    </th>
+                    <th class="deroulant">
+                    <a href="{{ path('app_login') }}">Compte</a>
+                    </th>
+                    <th>
+                    <a href ="{{path('app_team_index') }}">Equipe</a>
+                    </th>
+                    <th>
+                    <a href="{{ path('app_home_newsletter') }}">Newsletters</a>
+                    </th>
+                    <th>
+                    <a href="{{ path('app_home_contact') }}">Contact</a>
+                    </th>
+                    {% if app.user %}
+                        <a href="{{ path('app_home_index')}}">Salut mon reuf {{app.user.name}} </a>
+                        
+                        <a href="{{ path('app_home_index') }}">Se déconnecter</a>
+                    {% else %}
+                    <a href="{{path('app_login')}}"> Se connecter </a>
+                    <a href="{{ path('app_login') }}">Création de compte</a>
+                    {% endif %}
+                    
+                </tr>
+            </table>
+        
         {% block body %}{% endblock %}
     </body>
 </html>
