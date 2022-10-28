@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>TeamName</th>
+                <th>Joueurs</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,6 +19,11 @@
             <tr>
                 <td>{{ team.id }}</td>
                 <td>{{ team.teamName }}</td>
+                <td>
+                {% for adherent in team.adherents %}
+                {{ adherent.user }},
+                {% endfor %}
+                </td>
                 <td>
                     <a href="{{ path('app_team_show', {'id': team.id}) }}">show</a>
                     <a href="{{ path('app_team_edit', {'id': team.id}) }}">edit</a>
