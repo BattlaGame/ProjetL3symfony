@@ -5,6 +5,9 @@ namespace App\Controller;
 use App\Entity\Home;
 use App\Form\HomeType;
 use App\Repository\HomeRepository;
+use App\Entity\Contact;
+use App\Form\ContactType;
+use App\Repository\ContactRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,12 +31,23 @@ class HomeController extends AbstractController
             'homes' => $homeRepository->findAll(),
         ]);
     }
-
-    #[Route('/Contact', name: 'app_home_contact', methods: ['GET'])]
-    public function contact(HomeRepository $homeRepository): Response
+    
+    #[Route('/contact', name: 'app_contact_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, ContactRepository $contactRepository): Response
     {
-        return $this->render('home/contact.html.twig', [
-            'homes' => $homeRepository->findAll(),
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $contactRepository->save($contact, true);
+
+            return $this->redirectToRoute('app_home_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('contact/new.html.twig', [
+            'contact' => $contact,
+            'form' => $form,
         ]);
     }
 
