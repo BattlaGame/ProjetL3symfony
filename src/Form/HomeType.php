@@ -10,12 +10,12 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class HomeType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
+    /*public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
         ->add('imageFile',VichImageType::class)
         ;
-    }
+    }*/
 
     public function configureOptions(OptionsResolver $resolver): void
     {

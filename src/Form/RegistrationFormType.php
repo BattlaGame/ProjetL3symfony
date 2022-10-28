@@ -18,7 +18,12 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email')
-            ->add('image',VichImageType::class)
+           
+            ->add('imageFile', VichImageType::class, array(
+                'required' => false,
+                'allow_delete' => true, // not mandatory, default is true
+                'download_link' => true, // not mandatory, default is true
+                ))
             ->add('name')
             ->add('surname')
             ->add('dateDeNaissance')

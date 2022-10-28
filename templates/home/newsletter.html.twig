@@ -1,19 +1,22 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="C:\Users\alexa\Downloads\GoQuizz_ProjetInfo2021.zip\GoQuizz_ProjetInfo2021\pages\style" /> 
+{% endblock %}
 
 {% block title %}Newsletters{% endblock %}
-
 {% block body %}
 
-<h1>Home</h1>
+<h1>Newsletters</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ home.id }}</td>
+                <th>Image</th>
+
+                <img src="Test.jpg" width="200" height="267">
+
             </tr>
         </tbody>
     </table>
-
-
+    
 {% endblock %}
