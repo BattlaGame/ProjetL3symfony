@@ -9,6 +9,9 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Nom</th>
+                <th>Poste</th>
+                <th>Team</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -16,6 +19,9 @@
         {% for adherent in adherents %}
             <tr>
                 <td>{{ adherent.id }}</td>
+                <th>{{ adherent.user }}</th>
+                <th>{{ adherent.poste }}</th>
+                <th>{{ adherent.team }}</th>
                 <td>
                     <a href="{{ path('app_adherent_show', {'id': adherent.id}) }}">show</a>
                     <a href="{{ path('app_adherent_edit', {'id': adherent.id}) }}">edit</a>
