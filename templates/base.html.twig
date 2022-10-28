@@ -13,6 +13,10 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+        {% if is_granted('ROLE_ADMIN') %}
+
+            <a href="{{ path('app_user_index') }}">Page d'administration</a>
+        {% endif %}
     </head>
 
     <body>
@@ -28,10 +32,10 @@
                     <a href="{{ path('app_home_newsletter') }}">Newsletters</a>
                     </th>
                     <th>
-                    <a href="{{ path('app_home_contact') }}">Contact</a>
+                    <a href="{{ path('app_contact_new') }}">Contact</a>
                     </th>
                     {% if app.user %}
-                        <a href="{{ path('app_user_show', {'id': app.user.id}) }}">show</a>
+                        <a href="{{ path('app_user_show', {'id': app.user.id}) }}">Profil</a>
                         <p> </p>
                         <a href="{{ path('app_logout') }}">Se déconnecter</a>
                     {% else %}
