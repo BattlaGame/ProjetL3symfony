@@ -36,4 +36,5 @@ class HomeController extends AbstractController
             'homes' => $homeRepository->findAll(),
         ]);
     }
+
 }
