@@ -61,5 +61,26 @@ class RegistrationFormType extends AbstractType
         $resolver->setDefaults([
             'data_class' => User::class,
         ]);
+
     }
+    /*class User implements UserInterface, Serializable {
+
+    // our image
+    private $profileImage;
+
+    /*
+    Rest of our awesome entity
+    */
+
+    /*public function serialize()
+    {
+        $this->profileImage = base64_encode($this->profileImage);
+    }
+
+    public function unserialize($serialized)
+    {
+        $this->profileImage = base64_decode($this->profileImage);
+
+    }
+}*/
 }
