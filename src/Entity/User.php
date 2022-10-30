@@ -15,7 +15,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 #[Vich\Uploadable]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serializable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -240,16 +240,29 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->imageSize;
     }
-    public function serialize()
-    {
-        $this->profileImage = base64_encode($this->profileImage);
-    }
+    public function serialize() {
 
-    public function unserialize($serialized)
-    {
-        $this->profileImage = base64_decode($this->profileImage);
+        return serialize(array(
+        $this->id,
+        $this->email,
+        $this->password,
+        $this->name,
+        $this->surname,
+        ));
+        
+        }
+        
+        public function unserialize($serialized) {
+        
+        list (
+        $this->id,
+        $this->email,
+        $this->password,
+        $this->name,
+        $this->surname,
 
-    }
+        ) = unserialize($serialized);
+        }
 }
 
 
