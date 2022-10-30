@@ -248,6 +248,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
         $this->password,
         $this->name,
         $this->surname,
+        $this->dateDeNaissance,
         ));
         
         }
@@ -260,6 +261,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
         $this->password,
         $this->name,
         $this->surname,
+        $this->dateDeNaissance,
 
         ) = unserialize($serialized);
         }
