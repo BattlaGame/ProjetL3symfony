@@ -74,7 +74,7 @@ Encore
 ;
 
 module.exports = Encore.getWebpackConfig();
-const FosRouting = require('fos-router/webpack/FosRouting');
+/*const FosRouting = require('fos-router/webpack/FosRouting');
 //...
 Encore
-  .addPlugin(new FosRouting())
+  .addPlugin(new FosRouting())*/
