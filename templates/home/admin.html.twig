@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+{% endblock %}
+
+{% block title %}Pade d'administration{% endblock %}
+{% block body %}
+<h1>Page d'administration</h1>
+
+<a href="{{ path('app_user_inder') }}">Accès aux User </a>
+<a href="{{ path('app_team_index') }}">Accès aux team</a>
+<a href="{{ path('app_poste_index') }}">Accès aux Poste </a>
+<a href="{{ path('app_adherent_index') }}">Accès au Adherent </a>
+
+
+    
+{% endblock %}

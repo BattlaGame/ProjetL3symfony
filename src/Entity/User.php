@@ -36,8 +36,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
 
    
 
-    #[ORM\Column(type: 'datetime')]
+    #[ORM\Column(type: 'datetime',nullable: true)]
     private ?\DateTimeInterface $updatedAt = null;
+
     #[ORM\Column]
     private ?string $password = null;
 
@@ -181,12 +182,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
         return $this->getName();
     }
 
-    #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName', size: 'imageSize')]
+    #[ORM\Column(nullable: true)]
+    #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName', size: 'imageSize', )]
     private ?File $imageFile = null;
     
-    /*#[ORM\Column(type: 'datetime')]
-    private ?\DateTimeInterface $updatedAt2 = null;*/
-
 
     #[ORM\Column(type: 'string')]
     private ?string $imageName = null;

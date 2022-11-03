@@ -51,4 +51,12 @@ class HomeController extends AbstractController
         ]);
     }
 
+    #[Route('/admin', name: 'app_home_admin', methods: ['GET'])]
+    public function admin(HomeRepository $homeRepository): Response
+    {
+        return $this->render('home/admin.html.twig', [
+            'homes' => $homeRepository->findAll(),
+        ]);
+    }
+
 }
