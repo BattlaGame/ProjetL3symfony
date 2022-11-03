@@ -70,4 +70,3 @@ class Adherent
     {
         return 'rien';
     }
-}
