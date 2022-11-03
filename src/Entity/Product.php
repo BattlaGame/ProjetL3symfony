@@ -2,25 +2,22 @@
 
 namespace App\Entity;
 
-use App\Repository\HomeRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Entity\File as EmbeddedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
-#[ORM\Entity(repositoryClass: HomeRepository::class)]
+#[ORM\Entity]
 #[Vich\Uploadable]
-class Home
+class Product
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(type: 'integer')]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
     private ?int $id = null;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    // ... other fields
+
     #[ORM\Embedded(class: "Vich\UploaderBundle\Entity\File")]
     private ?EmbeddedFile $image = null;
 
@@ -36,7 +33,7 @@ class Home
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
      */
-   /* public function setImageFile(?File $imageFile = null): void
+    public function setImageFile(?File $imageFile = null): void
     {
         $this->imageFile = $imageFile;
 
@@ -60,6 +57,5 @@ class Home
     public function getImage(): ?EmbeddedFile
     {
         return $this->image;
-    }*/
+    }
 }
-

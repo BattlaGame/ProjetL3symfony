@@ -17,6 +17,9 @@
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
+                <img src="{{ vich_uploader_asset(user, 'imageFile') }}" alt="{{ user.imageName }}"width="200" height="200" />
+            </tr>
+            <tr>
                 <th>Email</th>
                 <td>{{ user.email }}</td>
             </tr>

@@ -21,7 +21,7 @@
             </tr>
             {% for adherent in team.adherents %}
             <tr>    
-                <td>{{ adherent.user }}</td>
+                <td>{{ adherent.user.getName() }}</td>
                 <td>{{ adherent.user.getSurname() }}</td>
                 <td>{{ adherent.poste }}</td>
                 

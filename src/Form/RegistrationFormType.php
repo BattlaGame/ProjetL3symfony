@@ -11,13 +11,19 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
-
+use Vich\UploaderBundle\Form\Type\VichImageType;
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('email')
+           
+            ->add('imageFile', VichImageType::class, array(
+                'required' => false,
+                'allow_delete' => true, // not mandatory, default is true
+                'download_link' => true, // not mandatory, default is true
+                ))
             ->add('name')
             ->add('surname')
             ->add('dateDeNaissance')
@@ -55,5 +61,26 @@ class RegistrationFormType extends AbstractType
         $resolver->setDefaults([
             'data_class' => User::class,
         ]);
+
     }
+    /*class User implements UserInterface, Serializable {
+
+    // our image
+    private $profileImage;
+
+    /*
+    Rest of our awesome entity
+    */
+
+    /*public function serialize()
+    {
+        $this->profileImage = base64_encode($this->profileImage);
+    }
+
+    public function unserialize($serialized)
+    {
+        $this->profileImage = base64_decode($this->profileImage);
+
+    }
+}*/
 }
