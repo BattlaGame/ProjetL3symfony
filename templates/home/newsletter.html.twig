@@ -1,8 +1,4 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="C:\Users\alexa\Downloads\GoQuizz_ProjetInfo2021.zip\GoQuizz_ProjetInfo2021\pages\style" /> 
-{% endblock %}
-
 {% block title %}Newsletters{% endblock %}
 {% block body %}
 
@@ -11,10 +7,17 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Image</th>
-
-                <img src="Test.jpg" width="200" height="267">
-
+            <div class="Team1">
+                <th>Notre équipe</th>
+                 <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez">
+                <img src={{asset('Imagesv2/Test.jpg')}} alt=" TestFailed " width="300" height="300" />
+                </div>
+                <div class="Team2">
+                <th>Notre équipe 2</th>
+                 <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez">
+                <img src={{asset('Imagesv2/Test.jpg')}} alt=" TestFailed " width="300" height="300" />
+                </div>
+                </a>
             </tr>
         </tbody>
     </table>
