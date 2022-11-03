@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/contact')]
 class ContactController extends AbstractController
 {
-    #[Route('/', name: 'app_contact_index', methods: ['GET'])]
+    #[Route('/admin', name: 'app_contact_index', methods: ['GET'])]
     public function index(ContactRepository $contactRepository): Response
     {
         return $this->render('contact/index.html.twig', [
