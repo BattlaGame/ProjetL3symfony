@@ -65,4 +65,5 @@ class Adherent
 
         return $this;
     }
+    
 }
