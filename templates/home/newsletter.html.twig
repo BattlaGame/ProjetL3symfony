@@ -4,22 +4,67 @@
 
 <h1>Newsletters</h1>
 
-    <table class="table">
+ {# <table class="table">
         <tbody>
             <tr>
-            <div class="Team1">
                 <th>Notre équipe</th>
+                <div class="Team1">
                  <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez">
-                <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="300" height="300" />
+                <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="300" height="300" hspace="20" align="left"  />
                 </div>
-                <div class="Team2">
+                 </a>
+               
                 <th>Notre équipe 2</th>
+                 <div class="Team2">
                  <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez">
-                <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="300" height="300" />
+                <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="300" height="300" hspace="20"    />
+                </div>
+                </a>
+
+                <th>Notre équipe 3</th>
+                 <div class="Team3">
+                 <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez">
+                <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="300" height="300" hspace="20" vspace="20" align="left" />
+                </div>
+                </a>
+
+                <th>Notre équipe 4</th>
+                 <div class="Team4">
+                 <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez">
+                <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="300" height="300" hspace="20" vspace="20" align="left" />
                 </div>
                 </a>
             </tr>
         </tbody>
     </table>
     
+{% endblock %}
+#}
+<style>
+        td{text-align: center;}
+    </style>
+<table>
+    
+    <tr>
+         <td class="CSS Settings" id="CSS Settings"> Text for image 1 </td>
+        <td class="CSS Settings"> Text for image 2 </td>
+        <td class="CSS Settings"> Text for image 3 </td>
+         <td class="CSS Settings"> Text for image 4 </td>
+
+    </tr>
+    <tr>
+    
+        <td class="CSS Settings"><a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez"> <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="400" height="400" hspace="20" vspace="20" align="left" title="your text" /> </td>
+         </a>
+        
+        <td class="CSS Settings"> <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez"><img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="400" height="400" hspace="20" vspace="20" title="your text"  /> </td>
+         </a>
+        
+        <td class="CSS Settings"> <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez"><img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="400" height="400" hspace="20" vspace="20" align="left" title="your text" /> </td>
+         </a>
+        
+         <td class="CSS Settings"><a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez"> <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="400" height="400" hspace="20" vspace="20" align="left" title="your text" /> </td>
+     </a>
+    </tr>
+</table>
 {% endblock %}
