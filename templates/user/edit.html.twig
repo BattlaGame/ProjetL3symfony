@@ -5,9 +5,16 @@
 {% block body %}
     <h1>Modification de profile</h1>
 
+    <h1>Edit User</h1>
+    
+    {% if user.id == app.user.id or is_granted('ROLE_ADMIN') %}
     {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('app_user_index') }}">back to list</a>
 
     {{ include('user/_delete_form.html.twig') }}
+    
+    {% else %}
+    <p> Vous n'avez pas accès à cette page </p>
+    {% endif %}
 {% endblock %}
