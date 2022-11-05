@@ -34,12 +34,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     /**
      * @var string The hashed password
      */
-
-
-   
-
-    
-
     #[ORM\Column]
     private ?string $password = null;
 
@@ -183,7 +177,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
         return $this->getName();
     }
 
-    //#[ORM\Column(/*nullable: true*/)]
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName', size: 'imageSize', )]
     private ?File $imageFile = null;
     

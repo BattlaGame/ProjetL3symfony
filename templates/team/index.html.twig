@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Team index{% endblock %}
+{% block title %}Equipe{% endblock %}
 
 {% block body %}
-    <h1>Team</h1>
+    <h1>Toutes nos Equipes</h1>
 
     <table class="table">
         <thead>
@@ -12,25 +12,34 @@
         <tbody>
         {% for team in teams %}
             <tr>
-            <td colspan="3">{{ team.teamName }}</td>
+            <td colspan="4">{{ team.teamName }}</td>
+            {% if is_granted('ROLE_ADMIN') %}
+                <td>
+                <a href="{{ path('app_team_show', {'id': team.id}) }}">show</a>
+                <a href="{{ path('app_team_edit', {'id': team.id}) }}">edit</a>
+                </td>
+            {% endif %}
             </tr>
             <tr>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Poste</th>
+                <th>Image de profile</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Poste</th>
             </tr>
             {% for adherent in team.adherents %}
-            <tr>    
+            <tr> 
+                <td><img src="{{ vich_uploader_asset(adherent.user, 'imageFile') }}" alt="{{ adherent.user.getImageName() }}"width="50" height="50" />
+                </td>   
                 <td>{{ adherent.user.getName() }}</td>
                 <td>{{ adherent.user.getSurname() }}</td>
                 <td>{{ adherent.poste }}</td>
                 
             </tr>
             {% endfor %}
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
         {% endfor %}
         </tbody>
     </table>
