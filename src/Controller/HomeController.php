@@ -24,7 +24,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/Newsletter', name: 'app_home_newsletter', methods: ['GET'])]
+    #[Route('/newsletter', name: 'app_home_newsletter', methods: ['GET'])]
     public function newsletter(HomeRepository $homeRepository): Response
     {
         return $this->render('home/newsletter.html.twig', [

@@ -43,4 +43,8 @@
         {% endfor %}
         </tbody>
     </table>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_team_new') }}">Créer une nouvelle équipe</a>
+        <a href="{{ path('app_adherent_new') }}">Ajouter un nouveau joueur</a>
+    {% endif %}
 {% endblock %}
