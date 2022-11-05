@@ -10,6 +10,9 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Vich\UploaderBundle\Entity\File as EmbeddedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
@@ -180,18 +183,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
         return $this->getName();
     }
 
-    #[ORM\Column(nullable: true)]
+    //#[ORM\Column(/*nullable: true*/)]
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName', size: 'imageSize', )]
     private ?File $imageFile = null;
     
 
-    #[ORM\Column(type: 'string', nullable: true)]
+    #[ORM\Column(type: 'string'/*, nullable: true*/)]
     private ?string $imageName = null;
 
-    #[ORM\Column(type: 'integer', nullable: true)]
+    #[ORM\Column(type: 'integer'/*, nullable: true*/)]
     private ?int $imageSize = null;
 
-    #[ORM\Column(type: 'datetime',nullable: true)]
+    #[ORM\Column(type: 'datetime'/*,nullable: true*/)]
     private ?\DateTimeInterface $updatedAt = null;
 
    
