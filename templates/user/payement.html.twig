@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block title %}Newsletters{% endblock %}
+{% block body %}
+<form id=payment>
+<fieldset>
+<legend>Données de carte</legend>
+<ol>
+<li>
+<fieldset>
+<legend>Type carte</legend>
+<ol>
+<li>
+<input id=visa name=cardtype type=radio>
+<label for=visa>VISA</label>
+</li>
+<li>
+<input id=paypal name=cardtype type=radio>
+<label for=paypal>PayPal</label>
+</li>
+<li>
+<input id=mastercard name=cardtype type=radio>
+<label for=mastercard>Mastercard</label>
+</li>
+</ol>
+</fieldset>
+</li>
+<li>
+<label for=cardnumber>Numéro de carte</label>
+<input id=cardnumber name=cardnumber type=number required>
+</li>
+<li>
+<label for=secure>Code de sécurité</label>
+<input id=secure name=secure type=number required>
+</li>
+<li>
+<label for=namecard>Nom sur la carte</label>
+<input id=namecard name=namecard type=text placeholder="Nom exact sur la carte" required>
+</li>
+</ol>
+</fieldset>
+</form>
+<fieldset>
+<form action="{{ path('app_user_payer', {'id': app.user.id}) }}" method="POST">
+       <input type="submit"/>
+</fieldset>
+
+
+{% endblock %}

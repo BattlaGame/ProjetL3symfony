@@ -181,14 +181,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     private ?File $imageFile = null;
     
 
-    #[ORM\Column(type: 'string'/*, nullable: true*/)]
+    #[ORM\Column(type: 'string', nullable: true)]
     private ?string $imageName = null;
 
-    #[ORM\Column(type: 'integer'/*, nullable: true*/)]
+    #[ORM\Column(type: 'integer', nullable: true)]
     private ?int $imageSize = null;
 
-    #[ORM\Column(type: 'datetime'/*,nullable: true*/)]
+    #[ORM\Column(type: 'datetime',nullable: true)]
     private ?\DateTimeInterface $updatedAt = null;
+
+    #[ORM\Column]
+    private ?bool $payement = null;
 
    
 
@@ -260,6 +263,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
         $this->dateDeNaissance,
 
         ) = unserialize($serialized);
+        }
+
+        public function isPayement(): ?bool
+        {
+            return $this->payement;
+        }
+
+        public function setPayement(bool $payement): self
+        {
+            $this->payement = $payement;
+
+            return $this;
         }
 }
 

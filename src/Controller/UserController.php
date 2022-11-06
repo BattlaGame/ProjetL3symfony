@@ -79,4 +79,13 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    #[Route('/{id}/payer', name: 'app_user_payer', methods: ['GET', 'POST'])]
+    public function payer(User $user, UserRepository $userRepository): Response
+    {
+        $user.setPayement(true);
+        return $this->render('home/index.html.twig', [
+            'users' => $userRepository->findAll(),
+        ]);
+    }
 }
