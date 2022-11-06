@@ -14,6 +14,10 @@ import './styles/app.scss';
 import './bootstrap';
 
 
+var button = document.getElementById('myButton');
+button.onclick = function() {
+  location.assign('/{id}');
+}
 
 function changeColor(elem,color) {
 
@@ -31,3 +35,6 @@ function changeColor(elem,color) {
             changeColor(this, "black");
             
             });
+
+
+          
