@@ -9,8 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 #[Route('/adherent')]
+#[IsGranted('ROLE_ADMIN')]
 class AdherentController extends AbstractController
 {
     #[Route('/', name: 'app_adherent_index', methods: ['GET'])]
