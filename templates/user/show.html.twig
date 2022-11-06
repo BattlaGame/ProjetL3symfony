@@ -40,6 +40,9 @@
                 <th>Password</th>
                 <td>{{ user.password }}</td>
             </tr>
+            <th>Payment</th>
+                <td>{{ user.payement}}</td>
+            </tr>
         </tbody>
     </table>
     {% if is_granted('ROLE_ADMIN') %}
