@@ -42,6 +42,25 @@ class AdherentController extends AbstractController
         ]);
     }
 
+    #[Route('/newbis', name: 'app_adherent_newbis', methods: ['GET', 'POST'])]
+    public function newbis(Request $request, AdherentRepository $adherentRepository): Response
+    {
+        $adherent = new Adherent();
+        $form = $this->createForm(AdherentType::class, $adherent);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $adherentRepository->save($adherent, true);
+
+            return $this->redirectToRoute('app_team_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('adherent/new.html.twig', [
+            'adherent' => $adherent,
+            'form' => $form,
+        ]);
+    }
+
     #[Route('/{id}', name: 'app_adherent_show', methods: ['GET'])]
     public function show(Adherent $adherent): Response
     {
