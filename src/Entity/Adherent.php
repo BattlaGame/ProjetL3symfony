@@ -22,8 +22,7 @@ class Adherent
     private ?Team $team = null;
 
     #[ORM\ManyToOne(inversedBy: 'adherent')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Poste $poste = null;
+    private ?Poste $name_poste = null;
 
     public function getId(): ?int
     {
@@ -59,14 +58,14 @@ class Adherent
         return 'rien';
     }
 
-    public function getPoste(): ?Poste
+    public function getNamePoste(): ?Poste
     {
-        return $this->poste;
+        return $this->name_poste;
     }
 
-    public function setPoste(?Poste $poste): self
+    public function setNamePoste(?Poste $name_poste): self
     {
-        $this->poste = $poste;
+        $this->name_poste = $name_poste;
 
         return $this;
     }

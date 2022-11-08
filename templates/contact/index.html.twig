@@ -1,20 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contact index{% endblock %}
+{% block title %}Index des contactes{% endblock %}
 
 {% block body %}
-    <h1>Contact index</h1>
+    <h1>Index des contactes</h1>
+    <h2>Liste de tous les messages</h2>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Surname</th>
+                <th>Prenom</th>
+                <th>Nom</th>
                 <th>Email</th>
-                <th>Subject</th>
+                <th>Sujet</th>
                 <th>Message</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -27,8 +28,8 @@
                 <td>{{ contact.subject }}</td>
                 <td>{{ contact.message }}</td>
                 <td>
-                    <a href="{{ path('app_contact_show', {'id': contact.id}) }}">show</a>
-                    <a href="{{ path('app_contact_edit', {'id': contact.id}) }}">edit</a>
+                    <a href="{{ path('app_contact_show', {'id': contact.id}) }}">Voir</a>
+                    <a href="{{ path('app_contact_edit', {'id': contact.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}

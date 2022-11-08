@@ -18,12 +18,12 @@ class Poste
     #[ORM\Column(length: 255)]
     private ?string $namePoste = null;
 
-    #[ORM\OneToMany(mappedBy: 'adherent', targetEntity: adherent::class)]
+    #[ORM\OneToMany(mappedBy: 'name_poste', targetEntity: Adherent::class)]
     private Collection $adherent;
 
     public function __construct()
     {
-        $this->poste_adherent = new ArrayCollection();
+        $this->adherent = new ArrayCollection();
     }
     public function getId(): ?int
     {
@@ -42,23 +42,6 @@ class Poste
         return $this;
     }
 
-    public function getAdherent(): ?Adherent
-    {
-        return $this->adherent;
-    }
-
-    public function setAdherent(Adherent $adherent): self
-    {
-        // set the owning side of the relation if necessary
-        if ($adherent->getPoste() !== $this) {
-            $adherent->setPoste($this);
-        }
-
-        $this->adherent = $adherent;
-
-        return $this;
-    }
-
     public function __toString()
     {
         return $this->getNamePoste();
@@ -67,27 +50,17 @@ class Poste
     /**
      * @return Collection<int, adherent>
      */
-    public function getPosteAdherent(): Collection
+    public function getAdherent(): Collection
     {
-        return $this->poste_adherent;
+        return $this->adherent;
     }
 
-    public function addPosteAdherent(adherent $posteAdherent): self
+    public function removeAdherent(adherent $adherent): self
     {
-        if (!$this->poste_adherent->contains($posteAdherent)) {
-            $this->poste_adherent->add($posteAdherent);
-            $posteAdherent->setPosteAdherent($this);
-        }
-
-        return $this;
-    }
-
-    public function removePosteAdherent(adherent $posteAdherent): self
-    {
-        if ($this->poste_adherent->removeElement($posteAdherent)) {
+        if ($this->adherent->removeElement($adherent)) {
             // set the owning side to null (unless already changed)
-            if ($posteAdherent->getPosteAdherent() === $this) {
-                $posteAdherent->setPosteAdherent(null);
+            if ($adherent->getNamePoste() === $this) {
+                $adherent->setNamePoste(null);
             }
         }
 
