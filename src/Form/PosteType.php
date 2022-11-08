@@ -22,7 +22,7 @@ class PosteType extends AbstractType
                     'Central' => 'Central',
                     'Coach' => 'Coach',
                 ]])
-            ->add('adherent')
+
         ;
     }
 

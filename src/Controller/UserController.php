@@ -11,9 +11,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/user')]
+
 class UserController extends AbstractController
 {
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
+    #[Security("IsGranted('ROLE_ADMIN')")]
     public function index(UserRepository $userRepository): Response
     {
         return $this->render('user/index.html.twig', [
