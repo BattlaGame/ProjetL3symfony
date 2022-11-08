@@ -317,7 +317,11 @@
 </ul>
 
 <td>
-	<font color=red> NOUVEAU! </font><a href="{{ path('app_user_Topayer', {'id': app.user.id}) }}"<font color=black>&#8594 </font>PAYEMENT EN LIGNE <font color=black>&#8592</font></a>
+{% if app.user %}
+    <<font color=red> NOUVEAU! </font><a href="{{ path('app_user_Topayer', {'id': app.user.id}) }}"<font color=black>&#8594 </font>PAYEMENT EN LIGNE <font color=black>&#8592</font></a>
+{% else %}
+
+{% endif %}
 </td>
 <p>
 </p>
@@ -350,7 +354,7 @@
 <p>  À fournir par le licencié : <u><font color=red>Avant le 1 octobre dernier délai </font></u></p>
 
 <ul>
-<a  href= "http://www.jouevolleyball.fr/wp-content/uploads/2022/08/Dossier-dinscription_JVB_2022-2023.pdf"><li> Dossier d’inscription JVB 2022-2023 <li></a>
+<a  href= "http://www.jouevolleyball.fr/wp-content/uploads/2022/08/Dossier-dinscription_JVB_2022-2023.pdf"><li> Dossier d’inscription JVB 2022-2023 </li></a>
 <li> Une photo d'identité (maximum 2,5 cm en hauteur) </li>
 <li> Un chèque de cotisation de 105€ à l’ordre du Joué Volley Ball (possibilité de régler en 3 mensualités) </li>
 <li> Une copie d’un justificatif d’identité du licencié (sauf renouvellement) </li>
@@ -359,7 +363,7 @@
 </ul>
 
 <p> <font color= red> Il y a une nouvelle loi concernant les certificats médicaux, je vous invite à lire attentivement les modalités d’inscription. </font></p>
-<p> UN PROBLÈME ? UNE QUESTION ? Pour plus d’infos contacter les dirigeants du JVB (contact@jouevolleyball.fr) </p>
+<p> UN PROBLÈME ? UNE QUESTION ? Pour plus d’infos contacter les dirigeants du JVB (contact@jouevolleyball.fr) ou via la page contact </p>
 
 </body>
 </html>

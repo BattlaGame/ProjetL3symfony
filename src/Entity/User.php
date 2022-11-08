@@ -191,7 +191,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     private ?\DateTimeInterface $updatedAt = null;
 
     #[ORM\Column]
-    private ?bool $payement = null;
+    private ?bool $payement = false;
 
    
 

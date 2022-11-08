@@ -9,8 +9,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NamePoste</th>
-                <th>actions</th>
+                <th>Poste</th>
+                {#<th>Nom des adhérents</th>#}
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,11 @@
             <tr>
                 <td>{{ poste.id }}</td>
                 <td>{{ poste.namePoste }}</td>
+                
+                {#{% for adherent in poste.adherent %}
+                <td>{{ adherent.user.getName() }}</td>
+                {% endfor %}#}
+
                 <td>
                     <a href="{{ path('app_poste_show', {'id': poste.id}) }}">show</a>
                     <a href="{{ path('app_poste_edit', {'id': poste.id}) }}">edit</a>

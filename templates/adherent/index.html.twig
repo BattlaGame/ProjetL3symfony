@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Adherent index{% endblock %}
+{% block title %}Index des adherents{% endblock %}
 
 {% block body %}
-    <h1>Adherent index</h1>
+    <h1>Index des adherents</h1>
 
     <table class="table">
         <thead>
@@ -12,7 +12,7 @@
                 <th>Nom</th>
                 <th>Poste</th>
                 <th>Team</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -20,11 +20,11 @@
             <tr>
                 <td>{{ adherent.id }}</td>
                 <th>{{ adherent.user }}</th>
-                <th>{{ adherent.poste }}</th>
+                <th>{{ adherent.getNamePoste() }}</th>
                 <th>{{ adherent.team }}</th>
                 <td>
-                    <a href="{{ path('app_adherent_show', {'id': adherent.id}) }}">show</a>
-                    <a href="{{ path('app_adherent_edit', {'id': adherent.id}) }}">edit</a>
+                    <a href="{{ path('app_adherent_show', {'id': adherent.id}) }}">Voir</a>
+                    <a href="{{ path('app_adherent_edit', {'id': adherent.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_adherent_new') }}">Create new</a>
+    <a href="{{ path('app_adherent_new') }}">Créer un nouveau adherent</a>
 {% endblock %}
