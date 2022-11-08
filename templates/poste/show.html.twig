@@ -15,12 +15,14 @@
                 <th>NamePoste</th>
                 <td>{{ poste.namePoste }}</td>
             </tr>
-            {% for adherent in poste.adherent %}
+            
             <tr>
                 <th>Joueur</th>
+                {% for adherent in poste.adherent %}
                 <td>{{ adherent.user.getName() }}</td>
+                {% endfor %}
             </tr>
-            {% endfor %}
+           
         </tbody>
     </table>
 
