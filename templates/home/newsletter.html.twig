@@ -41,30 +41,151 @@
 {% endblock %}
 #}
 <style>
-        td{text-align: center;}
+td{text-align: center;}
     </style>
 <table>
     
     <tr>
-         <td class="CSS Settings" id="CSS Settings"> Text for image 1 </td>
-        <td class="CSS Settings"> Text for image 2 </td>
-        <td class="CSS Settings"> Text for image 3 </td>
-         <td class="CSS Settings"> Text for image 4 </td>
+         <td id="CSS Settings" class="CSS Settings" > Semaine 45 </td>
+        <td id="CSS Settings2" class="CSS Settings"> Semaine 42 </td>
+        <td id="CSS Settings3" class="CSS Settings"> Semaine 41 </td>
+         <td id="CSS Settings4" class="CSS Settings"> Semaine 40 </td>
 
     </tr>
     <tr>
     
-        <td class="CSS Settings"><a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez"> <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="400" height="400" hspace="20" vspace="20" align="left" title="your text" /> </td>
-         </a>
+    
+        <td class="CSS Settings"><img src={{asset('imageSite/Newsletter_122-scaled.jpg')}}  width="400" height="400" hspace="20" vspace="20" align="left" title="your text" id="CSS Settingsv1"    /> </td>
+         <div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
         
-        <td class="CSS Settings"> <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez"><img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="400" height="400" hspace="20" vspace="20" title="your text"  /> </td>
-         </a>
+        <td  class="CSS Settings"> <img  src={{asset('imageSite/Newsletter_121-scaled.jpg')}}  width="400" height="400" hspace="20" vspace="20" title="your text" id="CSS Settingsv2"   /> </td>
+         <div id="myModal2" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img02">
+  <div id="caption2"></div>
+</div>
         
-        <td class="CSS Settings"> <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez"><img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="400" height="400" hspace="20" vspace="20" align="left" title="your text" /> </td>
-         </a>
-        
-         <td class="CSS Settings"><a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez"> <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="400" height="400" hspace="20" vspace="20" align="left" title="your text" /> </td>
-     </a>
+        <td  class="CSS Settings"> <img  src={{asset('imageSite/Newsletter_120-scaled.jpg')}}  width="400" height="400" hspace="20" vspace="20" align="left" title="your text" id="CSS Settingsv3"  /> </td>
+         
+        <div id="myModal3" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img03">
+  <div id="caption3"></div>
+</div>
+         <td  class="CSS Settings"><img  src={{asset('imageSite/Newsletter_119-1-scaled.jpg')}}  width="400" height="400" hspace="20" vspace="20" align="left" title="your text" id="CSS Settingsv4"    /> </td>
+     <div id="myModal4" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img04">
+  <div id="caption4"></div>
+</div>
+  
     </tr>
 </table>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("CSS Settingsv1");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+  span.onclick = function() { 
+  modal.style.display = "none";
+ 
+}
+</script>
+
+
+
+
+<script>
+// Get the modal
+var modal2 = document.getElementById("myModal2");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img2 = document.getElementById("CSS Settingsv2");
+var modalImg2 = document.getElementById("img02");
+var captionText2 = document.getElementById("caption2");
+img2.onclick = function(){
+  modal2.style.display = "block";
+  modalImg2.src = this.src;
+  captionText2.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[1];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+modal2.style.display = "none";
+}
+
+</script>
+
+
+
+
+
+<script>
+// Get the modal
+var modal3 = document.getElementById("myModal3");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img3 = document.getElementById("CSS Settingsv3");
+var modalImg3 = document.getElementById("img03");
+var captionText3 = document.getElementById("caption3");
+img3.onclick = function(){
+  modal3.style.display = "block";
+  modalImg3.src = this.src;
+  captionText3.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[2];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+modal3.style.display = "none";
+}
+
+</script>
+<script>
+// Get the modal
+var modal4 = document.getElementById("myModal4");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img4 = document.getElementById("CSS Settingsv4");
+var modalImg4 = document.getElementById("img04");
+var captionText4 = document.getElementById("caption4");
+img4.onclick = function(){
+  modal4.style.display = "block";
+  modalImg4.src = this.src;
+  captionText4.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[3];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+modal4.style.display = "none";
+}
+
+</script>
+
 {% endblock %}
+
