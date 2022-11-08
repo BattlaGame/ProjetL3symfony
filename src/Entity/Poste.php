@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PosteRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PosteRepository::class)]
@@ -16,9 +18,13 @@ class Poste
     #[ORM\Column(length: 255)]
     private ?string $namePoste = null;
 
-    #[ORM\OneToOne(mappedBy: 'poste', cascade: ['persist', 'remove'])]
-    private ?Adherent $adherent = null;
+    #[ORM\OneToMany(mappedBy: 'name_poste', targetEntity: Adherent::class)]
+    private Collection $adherent;
 
+    public function __construct()
+    {
+        $this->adherent = new ArrayCollection();
+    }
     public function getId(): ?int
     {
         return $this->id;
@@ -36,25 +42,28 @@ class Poste
         return $this;
     }
 
-    public function getAdherent(): ?Adherent
+    public function __toString()
+    {
+        return $this->getNamePoste();
+    }
+
+    /**
+     * @return Collection<int, adherent>
+     */
+    public function getAdherent(): Collection
     {
         return $this->adherent;
     }
 
-    public function setAdherent(Adherent $adherent): self
+    public function removeAdherent(adherent $adherent): self
     {
-        // set the owning side of the relation if necessary
-        if ($adherent->getPoste() !== $this) {
-            $adherent->setPoste($this);
+        if ($this->adherent->removeElement($adherent)) {
+            // set the owning side to null (unless already changed)
+            if ($adherent->getNamePoste() === $this) {
+                $adherent->setNamePoste(null);
+            }
         }
 
-        $this->adherent = $adherent;
-
         return $this;
-    }
-
-    public function __toString()
-    {
-        return $this->getNamePoste();
     }
 }

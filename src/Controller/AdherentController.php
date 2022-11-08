@@ -9,8 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 #[Route('/adherent')]
+#[IsGranted('ROLE_ADMIN')]
 class AdherentController extends AbstractController
 {
     #[Route('/', name: 'app_adherent_index', methods: ['GET'])]
@@ -32,6 +34,25 @@ class AdherentController extends AbstractController
             $adherentRepository->save($adherent, true);
 
             return $this->redirectToRoute('app_adherent_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('adherent/new.html.twig', [
+            'adherent' => $adherent,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/newbis', name: 'app_adherent_newbis', methods: ['GET', 'POST'])]
+    public function newbis(Request $request, AdherentRepository $adherentRepository): Response
+    {
+        $adherent = new Adherent();
+        $form = $this->createForm(AdherentType::class, $adherent);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $adherentRepository->save($adherent, true);
+
+            return $this->redirectToRoute('app_team_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('adherent/new.html.twig', [

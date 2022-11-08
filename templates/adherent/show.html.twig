@@ -11,12 +11,20 @@
                 <th>Id</th>
                 <td>{{ adherent.id }}</td>
             </tr>
+            <tr>
+                <th>User</th>
+                <td>{{ adherent.user.getName() }}</td>
+            </tr>
+            <tr>
+                <th>Team</th>
+                <td>{{ adherent.team.getTeamName() }}</td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_adherent_index') }}">back to list</a>
+    <a href="{{ path('app_adherent_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('app_adherent_edit', {'id': adherent.id}) }}">edit</a>
+    <a href="{{ path('app_adherent_edit', {'id': adherent.id}) }}">Editer</a>
 
     {{ include('adherent/_delete_form.html.twig') }}
 {% endblock %}

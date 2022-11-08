@@ -13,7 +13,7 @@ class Adherent
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\OneToOne(inversedBy: 'adherent', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(inversedBy: 'adherent')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
@@ -21,9 +21,8 @@ class Adherent
     #[ORM\JoinColumn(nullable: false)]
     private ?Team $team = null;
 
-    #[ORM\OneToOne(inversedBy: 'adherent', cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Poste $poste = null;
+    #[ORM\ManyToOne(inversedBy: 'adherent')]
+    private ?Poste $name_poste = null;
 
     public function getId(): ?int
     {
@@ -54,20 +53,20 @@ class Adherent
         return $this;
     }
 
-    public function getPoste(): ?Poste
-    {
-        return $this->poste;
-    }
-
-    public function setPoste(Poste $poste): self
-    {
-        $this->poste = $poste;
-
-        return $this;
-    }
-
     public function __toString()
     {
         return 'rien';
+    }
+
+    public function getNamePoste(): ?Poste
+    {
+        return $this->name_poste;
+    }
+
+    public function setNamePoste(?Poste $name_poste): self
+    {
+        $this->name_poste = $name_poste;
+
+        return $this;
     }
 }

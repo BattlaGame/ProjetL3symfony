@@ -14,7 +14,7 @@ class AdherentType extends AbstractType
         $builder
             ->add('user')
             ->add('team')
-            ->add('poste')
+            ->add('name_poste')
         ;
     }
 
