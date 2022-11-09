@@ -12,12 +12,12 @@
                 <td>{{ poste.id }}</td>
             </tr>
             <tr>
-                <th>NamePoste</th>
+                <th>Nom du poste</th>
                 <td>{{ poste.namePoste }}</td>
             </tr>
             
             <tr>
-                <th>Joueur</th>
+                <th>Joueurs</th>
                 {% for adherent in poste.adherent %}
                 <td>{{ adherent.user.getName() }}</td>
                 {% endfor %}
