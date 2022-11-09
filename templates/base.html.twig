@@ -26,7 +26,8 @@
 
     <body>
         <a href="http://127.0.0.1:8000/home">
-        <img src={{asset('imageSite/ImageNoel.jpg')}} alt=" TestFailed " width="1250" height="240" />
+        <img src={{asset('imageSite/ImageNoel.jpg')}} alt=" TestFailed " width="300" height="300" align="center"/>
+        <p> </p>
         <table class="table">   
                 <tr>
                     <th>
@@ -45,7 +46,7 @@
                     <a href="{{ path('app_contact_new') }}">Nous contacter</a>
                     </th>
                     {% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('app_home_admin') }}">Page d'administration</a>
+                    <a href="{{ path('app_home_admin') }}">Page d'administration  </a>
                     {% endif %}
                     {% if app.user %}
                         <a href="{{ path('app_user_show', {'id': app.user.id}) }}">Profil</a>
