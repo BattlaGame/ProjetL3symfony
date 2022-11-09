@@ -3,10 +3,8 @@
 {% block title %}JVB - Page de contact{% endblock %}
 
 {% block body %}
-    <h1>Contactez nous !</h1>
-
-<h1> Page de Contact </h1>
-<h2> Nos coordonées </h2>
+<h1 class = "title">Contactez nous !</h1>
+<h2 class = "otitle"> Nos coordonées :</h2>
 <p> Adresse : <strong> Gymnase Hubert HENNO, 4 ter, rue Jean Monnet – 37300 Joué-lès-Tours </strong> 
 Pour nous rejoindre:
 <ul>
@@ -22,11 +20,17 @@ tourner à droite comme indiqué sur le plan ci-contre. Les gymnases sont au fon
 parking voiture et des arceaux de stationnement vélo sont disponibles sur place.
 </p>
 
-<h2> Formulaire de contact : </h2>
+<h2 class = "title"> Formulaire de contact : </h2>
 
     {{ include('contact/_form.html.twig') }}
     {% if is_granted('ROLE_ADMIN') %}
         <a href="{{ path('app_contact_index') }}">Voir à la liste complète des contacts</a>
     {% endif %}
     
+    <style>
+        .title
+        {color : darkred}
+        .otitle
+        {color : #0053a1}
+    </style>
 {% endblock %}

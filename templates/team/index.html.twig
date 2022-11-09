@@ -3,7 +3,7 @@
 {% block title %}JVB - Equipe{% endblock %}
 
 {% block body %}
-    <h1>Toutes nos Equipes</h1>
+    <h1 class = "title" align = "center">Toutes nos Equipes :</h1>
 
     <table class="table">
         <thead>
@@ -12,7 +12,7 @@
         <tbody>
         {% for team in teams %}
             <tr>
-            <td colspan="4"><h3>{{ team.teamName }}</h3></td>
+            <td colspan="4"><h3 class = "otitle">{{ team.teamName }}</h3></td>
             {% if is_granted('ROLE_ADMIN') %}
                 <td>
                 <a href="{{ path('app_team_show', {'id': team.id}) }}">Voir</a>
@@ -47,5 +47,12 @@
         <a href="{{ path('app_team_new') }}">Créer une nouvelle équipe</a>
         <a href="{{ path('app_adherent_newbis') }}">Ajouter un nouveau joueur</a>
     {% endif %}
+
+    <style>
+        .title
+        {color : darkred}
+        .otitle
+        {color : #0053a1}
+    </style>
 {% endblock %}
 
