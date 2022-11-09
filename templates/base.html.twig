@@ -25,9 +25,26 @@
     </head>
 
     <body>
+
+        <div style ="text-align : center";>
         <a href="http://127.0.0.1:8000/home">
         <img src={{asset('imageSite/ImageNoel.jpg')}} alt=" TestFailed " width="300" height="300" align="center"/>
+        </div>  
         <p> </p>
+        <table>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('app_home_admin') }}">Page d'administration</a> 
+        {% endif %}
+        <p> </p>
+        {% if app.user %}
+            <a href="{{ path('app_user_show', {'id': app.user.id}) }}">Profil</a> 
+            <p> </p>
+            <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        {% else %}
+            <a href="{{path('app_login')}}"> Se connecter </a>
+            <p> </p>
+            <a href="{{ path('app_register') }}">Création de compte</a>
+        {% endif %}        
         <table class="table">   
                 <tr>
                     <th>
@@ -45,17 +62,7 @@
                     <th>
                     <a href="{{ path('app_contact_new') }}">Nous contacter</a>
                     </th>
-                    {% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('app_home_admin') }}">Page d'administration  </a>
-                    {% endif %}
-                    {% if app.user %}
-                        <a href="{{ path('app_user_show', {'id': app.user.id}) }}">Profil</a>
-                        <p> </p>
-                        <a href="{{ path('app_logout') }}">Se déconnecter</a>
-                    {% else %}
-                    <a href="{{path('app_login')}}"> Se connecter </a>
-                    <a href="{{ path('app_register') }}">Création de compte</a>
-                    {% endif %}
+                    
                     
                 </tr>
             </table>
