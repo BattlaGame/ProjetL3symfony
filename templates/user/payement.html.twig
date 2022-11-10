@@ -1,11 +1,52 @@
 {% extends 'base.html.twig' %}
-{% block title %}Newsletters{% endblock %}
+{% block title %}Payement{% endblock %}
 {% block body %}
-<form id=payment>
+<head>
+
+<div id="first">
+
+<h1 class="black">PAYEMENT EN LIGNE</h1>
+
+<h2 class="darkblue">18 septembre 2022 / Joué Volley Ball </h2>
+
+</head>
+
+</div>
+
+<hr/>
+
+<div id="second">
+<h4>Si vous n’avez pas encore payé votre licence, vous pouvez le faire en ligne sur cette page. </br>
+N’hésitez pas à demander à nos entraîneurs pendant les entraînements si vous avez besoin d’aide ou par la page "Nous contactez" </h4>
+</div>
+
+<div id="third">
 <fieldset>
-<legend>Données de carte</legend>
+<legend>Veuillez mettre une catégorie que vous souhaiter intégrer</legend>
 <ol>
 <li>
+<label>Catégorie</label>
+<select name="catégorie" Catégorie>
+<option value="natio"Nationale 3 Féminine</option>
+<option value="prenatio">Pré-Nationale Féminine</option>
+<option value="regio">Régionale Masculine</option>
+<option value="depa_f">Départementale Féminine</option>
+<option value="depa_m">Départementale Masculine</option>
+<option value="M18">M18 Régionale Féminine/Masculine</option>
+<option value="M15">M15 Départementale Féminine/Masculine</option>
+<option value="M13">M13 Départementale Féminine et Masculine</option>
+<option value="M9/M11">M9/M11 mixte</option>
+<option value="M7_1">M7 (Baby volley)</option>
+
+<option value="volleyLoisir">Volley Loisir (UFOLEP)</option>
+<option value="double">Double affiliation</option>
+<option value="encad">Encadrement</option>
+<option value="passben">Pass Bénévole</option>
+</select>
+</li>
+</ol>
+</fielset>
+
 <fieldset>
 <legend>Type carte</legend>
 <ol>
@@ -15,7 +56,7 @@
 </li>
 <li>
 <input id=paypal name=cardtype type=radio>
-<label for=paypal>PayPal</label>
+<label for=americanexpr>AmericanExpress</label>
 </li>
 <li>
 <input id=mastercard name=cardtype type=radio>
@@ -26,11 +67,11 @@
 </li>
 <li>
 <label for=cardnumber>Numéro de carte</label>
-<input id=cardnumber name=cardnumber type=number required>
+<input id=cardnumber name=cardnumber type>
 </li>
 <li>
 <label for=secure>Code de sécurité</label>
-<input id=secure name=secure type=number required>
+<input id=secure name=secure type>
 </li>
 <li>
 <label for=namecard>Nom sur la carte</label>
@@ -38,12 +79,39 @@
 </li>
 </ol>
 </fieldset>
+<br/>
+
+</div>
 </form>
-<fieldset>
 <form action="{{ path('app_user_payer', {'id': app.user.id}) }}">       
     <input type="submit" value="Payer"/>
 </form>
 </fieldset>
-{#{{ path('app_user_payer', {'id': app.user.id}) }}#}
+
+<style>
+.darkblue {
+color : blue;
+text-align:center;
+img-align:center;
+font-weight:bold;
+font-family: georgia;
+}
+
+.black {
+font-family: impact;
+text-align:center;
+}
+
+#second {
+font-family: Georgia;
+font-size: small;
+margin-left: 15px;
+}
+
+#third {
+font-family: georgia;
+margin-left: 15px;
+}
+</style>
 
 {% endblock %}
