@@ -317,8 +317,8 @@
 </ul>
 
 <td>
-{% if app.user %}
-    <<font color=red> NOUVEAU! </font><a href="{{ path('app_user_Topayer', {'id': app.user.id}) }}"<font color=black>&#8594 </font>PAYEMENT EN LIGNE <font color=black>&#8592</font></a>
+{% if app.user and app.user.isPayement()==false %}
+    <font color=red> NOUVEAU! </font><a href="{{ path('app_user_Topayer', {'id': app.user.id}) }}"<font color=black>&#8594 </font>PAYEMENT EN LIGNE <font color=black>&#8592</font></a>
 {% else %}
 
 {% endif %}

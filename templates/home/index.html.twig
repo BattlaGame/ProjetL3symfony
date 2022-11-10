@@ -19,10 +19,11 @@
         <br>
         <br>
     </p>
-    <table>
+     
+    <table style ="text-align : center";>
     <tbody>
         <tr>
-            <td><img  src={{asset('imageSite/Jvb.png')}}  width="230" height="230"/></td>
+            <td ><img  src={{asset('imageSite/Jvb.png')}}  width="230" height="230"/></td>
         <td>
             <span style = "color : #0053a1;"
             <p> LE PALMARES DU JVB </p>
@@ -37,23 +38,24 @@
         Label Club Formateur Futur pour la saison 2014/2015 <br>
         12 ans de maintien en Nationale 3 féminine depuis 2003
         </p>
-        </td>
-        <td>
-        <img  src={{asset('imageSite/PageAcc.jpeg')}}  width="360   " height="230"/>
-        </td>
-        </tr>
         
+        </td>
+         {# <td >
+        <img  src={{asset('imageSite/PageAcc.jpeg')}}  width="360   " height="230"/>
+        </td> #}
+        </tr>
+        </table>
 
 
 
     <h3 class = "titre"> Les articles du JVB... </h3>
-    <table class="table">
+    <table style ="text-align : center"; class="table">
         <tbody>
             <tr>
                 <td align = "center"> <a href="http://www.jouevolleyball.fr/index.php/2022/11/02/tournoi-dhalloween-2022/"> TOURNOI D’HALLOWEEN 2022 </a> </td>
                 <td align = "center"> <a href="http://127.0.0.1:8000/register"> INSCRIPTION EN LIGNE </a> </td>
             
-            <tr>
+            </tr>
             <tr>
                 
                 <td>
@@ -99,11 +101,13 @@
             </tr>
         {% endfor %} #}
         </tbody>
+        </table>
 
         <style>
             .titre
             {color : darkred}
         </style>
+        
     
 
 {% endblock %}
