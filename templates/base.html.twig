@@ -25,13 +25,14 @@
     </head>
 
     <body>
-
+        <div class ="couleur">
         <div style ="text-align : center";>
         <a href="http://127.0.0.1:8000/home">
         <img src={{asset('imageSite/ImageNoel.jpg')}} alt=" TestFailed " width="300" height="300" align="center"/>
         </div>  
         <p> </p>
-        <table>
+        <div class="topnav">
+        <table id="customers2">
         {% if is_granted('ROLE_ADMIN') %}
             <a href="{{ path('app_home_admin') }}">Page d'administration</a> 
         {% endif %}
@@ -44,66 +45,122 @@
             <a href="{{path('app_login')}}"> Se connecter </a>
             <p> </p>
             <a href="{{ path('app_register') }}">Création de compte</a>
-        {% endif %}        
-        <table class="table">   
+        {% endif %} 
+               </table>
+               </div> 
+        </div>     
+        <table  style ="text-align : center"; id="customers" class="table">   
+        
                 <tr>
-                    <th>
-                    <a href="{{ path('app_home_index') }}">Accueil</a>
+                    <th>    
+                    <a  href="{{ path('app_home_index') }}">Accueil</a>
+                    </th>
+                    <th >
+                    <a  href ="{{path('app_team_index') }}">Equipe</a>
+                    </th>
+                    <th >
+                    <a  href="{{ path('app_home_information') }}">Information pour les inscriptions</a>
                     </th>
                     <th>
-                    <a href ="{{path('app_team_index') }}">Equipe</a>
+                    <a  href="{{ path('app_home_newsletter') }}">Newsletters</a>
                     </th>
+                    
                     <th>
-                    <a href="{{ path('app_home_information') }}">Information pour les inscriptions</a>
-                    </th>
-                    <th>
-                    <a href="{{ path('app_home_newsletter') }}">Newsletters</a>
-                    </th>
-                    <th>
-                    <a href="{{ path('app_contact_new') }}">Nous contacter</a>
+                    <a  href="{{ path('app_contact_new') }}">Nous contacter</a>
                     </th>
                     
                     
                 </tr>
             </table>
+           
+           
+             </body>
         
         {% block body %}{% endblock %}
-    </body>
-    <footer>
-    <table class="table">
-    <tr><th>Nos Partenaires institutionnels</th>
+   
+    <footer id ="MyFooter">
+    <table class="table" style ="text-align : center";>
+    <tr style ="text-align : center";><th>Nos Partenaires institutionnels</th>
     <th>Nos Partenaires privés</th>
     <th>Affiliations</th></tr>
 
     <tr>
-    <td><img src={{asset('imageSite/Partenaires_institutionnels/joue-les-tours.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
-    <td><img src={{asset('imageSite/Partenaires_Privés/brossard-traiteur.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
-    <td><img src={{asset('imageSite/Affiliations/cd37.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
+    <td><img src={{asset('imageSite/Partenaires_institutionnels/joue-les-tours.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
+    <td><img src={{asset('imageSite/Partenaires_Privés/brossard-traiteur.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
+    <td><img src={{asset('imageSite/Affiliations/cd37.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
     </tr>
     <tr>
-    <td><img src={{asset('imageSite/Partenaires_institutionnels/logo-touraine.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
-    <td><img src={{asset('imageSite/Partenaires_Privés/clubeo.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
-    <td><img src={{asset('imageSite/Affiliations/ffvb.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
+    <td><img src={{asset('imageSite/Partenaires_institutionnels/logo-touraine.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
+    <td><img src={{asset('imageSite/Partenaires_Privés/clubeo.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
+    <td><img src={{asset('imageSite/Affiliations/ffvb.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
     </tr>
     <tr>
-    <td><img src={{asset('imageSite/Partenaires_institutionnels/region-centre.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
-    <td><img src={{asset('imageSite/Partenaires_Privés/fondation-SNCF.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
-    <td><img src={{asset('imageSite/Affiliations/Ligue-du-Centre.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
+    <td><img src={{asset('imageSite/Partenaires_institutionnels/region-centre.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
+    <td><img src={{asset('imageSite/Partenaires_Privés/fondation-SNCF.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
+    <td><img src={{asset('imageSite/Affiliations/Ligue-du-Centre.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
     </tr>
     <tr>
-    <td><img src={{asset('imageSite/Partenaires_institutionnels/service-civique.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
-    <td><img src={{asset('imageSite/Partenaires_Privés/Manpower.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
-    <td><img src={{asset('imageSite/Affiliations/volley-assis.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
+    <td><img src={{asset('imageSite/Partenaires_institutionnels/service-civique.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
+    <td><img src={{asset('imageSite/Partenaires_Privés/Manpower.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
+    <td><img src={{asset('imageSite/Affiliations/volley-assis.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
     </tr>
     <tr>
-    <td><img src={{asset('imageSite/Partenaires_institutionnels/tours-metropole.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
-    <td><img src={{asset('imageSite/Partenaires_Privés/solfab.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
-    <td><img src={{asset('imageSite/Affiliations/Volley-sante.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
+    <td><img src={{asset('imageSite/Partenaires_institutionnels/tours-metropole.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
+    <td><img src={{asset('imageSite/Partenaires_Privés/solfab.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
+    <td><img src={{asset('imageSite/Affiliations/Volley-sante.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
     </tr>
     <tr>
     <td></td>
-    <td><img src={{asset('imageSite/Partenaires_Privés/VB.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10" vspace="10" align="left" title="your text" /></td>
+    <td><img src={{asset('imageSite/Partenaires_Privés/VB.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
     <td></td>
     </tr>
+    </table>
     </footer>
+    <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  height:80px;
+ 
+}
+#customers tr:hover {background-color: #add8e6;}
+#customers {background-color: #D3d3d3;}
+#MyFooter {background-color:#add8e6;}
+#customers th {
+ height:20px;
+}
+a {text-decoration:none; }
+th { font-size: x-large; }
+td{font-size: large;
+ font-weight : bold; }
+.topnav {
+        
+        /*overflow: hidden;  */
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #D3d3d3;
+        font-size: large;
+        font-weight : bold;
+        }
+.topnav:hover {background-color: #add8e6;}
+.alignement{
+  float: left;
+}
+.alignement2{
+  float: right;
+}
+#alignement::after {
+   content: "";
+   display: block;
+   clear: both;
+}
+
+.couleur {
+    background-color : #add8e6;;
+}
+
+</style>
+
 </html>

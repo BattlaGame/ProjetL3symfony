@@ -98,5 +98,15 @@ class UserController extends AbstractController
             'users' => $userRepository->findAll(),
         ]);
     }
+    #[Route('/{id}/bloque', name: 'app_user_bloque', methods: ['GET', 'POST'])]
+    public function bloquer(User $user, UserRepository $userRepository): Response
+    {
+        
+        $user->setRoles(["ROLE_BOQUER"]);
+        $userRepository->save($user, true);
+        return $this->render('home/index.html.twig', [
+            'users' => $userRepository->findAll(),
+        ]);
+    }
 
 }

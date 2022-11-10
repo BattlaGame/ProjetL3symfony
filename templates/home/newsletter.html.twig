@@ -4,79 +4,43 @@
 
 <h1 class = "title" align = "center">Newsletters : </h1>
 
- {# <table class="table">
-        <tbody>
-            <tr>
-                <th>Notre équipe</th>
-                <div class="Team1">
-                 <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez">
-                <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="300" height="300" hspace="20" align="left"  />
-                </div>
-                 </a>
-               
-                <th>Notre équipe 2</th>
-                 <div class="Team2">
-                 <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez">
-                <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="300" height="300" hspace="20"    />
-                </div>
-                </a>
+ 
 
-                <th>Notre équipe 3</th>
-                 <div class="Team3">
-                 <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez">
-                <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="300" height="300" hspace="20" vspace="20" align="left" />
-                </div>
-                </a>
 
-                <th>Notre équipe 4</th>
-                 <div class="Team4">
-                 <a href="https://www.lanouvellerepublique.fr/tours/tours-volley-ball-l-heure-de-benjamin-diez">
-                <img src={{asset('imageSite/Test.jpg')}} alt=" TestFailed " width="300" height="300" hspace="20" vspace="20" align="left" />
-                </div>
-                </a>
-            </tr>
-        </tbody>
-    </table>
-    
-{% endblock %}
-#}
-<style>
-td{text-align: center;}
-    </style>
-<table>
-    
+<table style ="text-align : center">
+    <tbody>
     <tr>
-         <td id="CSS Settings" class="CSS Settings" > Semaine 45 </td>
+         <td  id="CSS Settings" class="CSS Settings" > Semaine 45 </td>
         <td id="CSS Settings2" class="CSS Settings"> Semaine 42 </td>
-        <td id="CSS Settings3" class="CSS Settings"> Semaine 41 </td>
-         <td id="CSS Settings4" class="CSS Settings"> Semaine 40 </td>
-
-    </tr>
+        </tr>
+    
     <tr>
-    
-    
-        <td class="CSS Settings"><img src={{asset('imageSite/Newsletter_122-scaled.jpg')}}  width="400" height="400" hspace="20" vspace="20" align="left" title="your text" id="CSS Settingsv1"    /> </td>
+        <td class="CSS Settings"><img class="img" src={{asset('imageSite/Newsletter_122-scaled.jpg')}}   hspace="20" vspace="20"  title="your text" id="CSS Settingsv1"    /> </td>
          <div id="myModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img01">
   <div id="caption"></div>
 </div>
         
-        <td  class="CSS Settings"> <img  src={{asset('imageSite/Newsletter_121-scaled.jpg')}}  width="400" height="400" hspace="20" vspace="20" title="your text" id="CSS Settingsv2"   /> </td>
+        <td  class="CSS Settings"> <img class="img" src={{asset('imageSite/Newsletter_121-scaled.jpg')}} hspace="20" vspace="20" title="your text" id="CSS Settingsv2"   /> </td>
          <div id="myModal2" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img02">
   <div id="caption2"></div>
 </div>
-        
-        <td  class="CSS Settings"> <img  src={{asset('imageSite/Newsletter_120-scaled.jpg')}}  width="400" height="400" hspace="20" vspace="20" align="left" title="your text" id="CSS Settingsv3"  /> </td>
+ </tr> <tr> <td id="CSS Settings3" class="CSS Settings"> Semaine 41 </td>
+         <td id="CSS Settings4" class="CSS Settings"> Semaine 40 </td>
+
+    </tr>
+        <tr> 
+        <td  class="CSS Settings"> <img class="img" src={{asset('imageSite/Newsletter_120-scaled.jpg')}}   hspace="20" vspace="20"  title="your text" id="CSS Settingsv3"  /> </td>
          
         <div id="myModal3" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img03">
   <div id="caption3"></div>
 </div>
-         <td  class="CSS Settings"><img  src={{asset('imageSite/Newsletter_119-1-scaled.jpg')}}  width="400" height="400" hspace="20" vspace="20" align="left" title="your text" id="CSS Settingsv4"    /> </td>
+         <td  class="CSS Settings"><img class="img" src={{asset('imageSite/Newsletter_119-1-scaled.jpg')}}   hspace="20" vspace="20"  title="your text" id="CSS Settingsv4"    /> </td>
      <div id="myModal4" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img04">
@@ -84,6 +48,7 @@ td{text-align: center;}
 </div>
   
     </tr>
+    </tbody>
 </table>
 <script>
 // Get the modal
@@ -192,6 +157,7 @@ modal4.style.display = "none";
         {color : darkred}
         .otitle
         {color : #0053a1}
+        .img{width: 80%}
     </style>
 
 {% endblock %}
