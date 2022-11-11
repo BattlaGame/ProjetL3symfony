@@ -25,6 +25,7 @@
     </head>
 
     <body>
+    <div="backroundcolor">
 
         <div style ="text-align : center";>
         <a href="http://127.0.0.1:8000/home">
@@ -49,7 +50,7 @@
                </table>
                </div> 
               
-        <table  style ="text-align : center"; id="customers" class="table">   
+        <table  style ="text-align : left"; id="customers" class="table">   
         
                 <tr>
                     <th>
@@ -58,8 +59,8 @@
                     <th >
                     <a  href ="{{path('app_team_index') }}">Equipe</a>
                     </th>
-                    <th >
-                    <a  href="{{ path('app_home_information') }}">Information pour les inscriptions</a>
+                    <th>
+                    <a  href="{{ path('app_home_information') }}">Inscriptions</a>
                     </th>
                     <th>
                     <a  href="{{ path('app_home_newsletter') }}">Newsletters</a>
@@ -145,17 +146,15 @@ td{font-size: large;
         font-weight : bold;
         }
 .topnav:hover {background-color: #add8e6;}
+
 .alignement{
   float: left;
 }
+
 .alignement2{
   float: right;
 }
-#alignement::after {
-   content: "";
-   display: block;
-   clear: both;
-}
+
 
 </style>
 
