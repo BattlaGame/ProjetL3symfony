@@ -68,6 +68,7 @@ class HomeController extends AbstractController
     }
 
     #[Route('/admin', name: 'app_home_admin', methods: ['GET'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function admin(HomeRepository $homeRepository): Response
     {
         return $this->render('home/admin.html.twig', [
