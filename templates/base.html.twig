@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+
 <html>
     <head>
         
@@ -72,10 +74,12 @@
                     
                 </tr>
             </table>
-    </body>
-        
+    </body>  
+{% if is_granted('ROLE_BLOQUER') %}
+    <p> Vous n'avez pas accès car vous êtes bloqué </p>
+{% else %}  
         {% block body %}{% endblock %}
-   
+{% endif %}  
     <footer id ="MyFooter">
     <table class="table" style ="text-align : center";>
     <tr style ="text-align : center";><th><FONT COLOR="fef200">Nos Partenaires institutionnels</FONT></th>
@@ -169,3 +173,4 @@ body, html {
 </style>
 
 </html>
+
