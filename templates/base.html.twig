@@ -30,7 +30,7 @@
         <div class ="couleur">
         <div style ="text-align : center";>
         <a href="http://127.0.0.1:8000/home">
-        <img src={{asset('imageSite/ImageNoel.jpg')}} alt=" TestFailed " width="300" height="300" align="center"/>
+        <img src={{asset('imageSite/Noeljaune.jpg')}} alt=" TestFailed " width="300" height="300" align="center"/>
         </div>  
         <p> </p>
         <div class="topnav">
@@ -74,9 +74,11 @@
                     
                 </tr>
             </table>
-    </body>  
+    </body>
+    <br><br><br><br><br><br><br>
 {% if is_granted('ROLE_BLOQUER') %}
-    <p> Vous n'avez pas accès car vous êtes bloqué </p>
+    <h1> Vous n'avez pas accès car vous êtes bloqué </h1>
+    <br><br><br><br><br><br><br>
 {% else %}  
         {% block body %}{% endblock %}
 {% endif %}  
