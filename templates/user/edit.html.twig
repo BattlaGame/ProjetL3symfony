@@ -6,7 +6,7 @@
     <h1>Modification de profile</h1>
     
     {% if user.id == app.user.id or is_granted('ROLE_ADMIN') %}
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('user/_form.html.twig', {'button_label': 'Modifier'}) }}
 
     <a href="{{ path('app_user_index') }}">Retour à la liste</a>
 
