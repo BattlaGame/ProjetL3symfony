@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+
 <html>
     <head>
         
@@ -72,15 +74,18 @@
                     
                 </tr>
             </table>
-    </body>
-        
+    </body>  
+{% if is_granted('ROLE_BLOQUER') %}
+    <p> Vous n'avez pas accès car vous êtes bloqué </p>
+{% else %}  
         {% block body %}{% endblock %}
-   
+{% endif %}  
     <footer id ="MyFooter">
     <table class="table" style ="text-align : center";>
-    <tr style ="text-align : center";><th>Nos Partenaires institutionnels</th>
-    <th>Nos Partenaires privés</th>
-    <th>Affiliations</th></tr>
+    <tr style ="text-align : center";><th><FONT COLOR="fef200">Nos Partenaires institutionnels</FONT></th>
+    <th><FONT COLOR="fef200">Nos Partenaires privés</FONT></th>
+    <th><FONT COLOR="fef200">Affiliations</th></FONT></tr>
+    
 
     <tr>
     <td><img src={{asset('imageSite/Partenaires_institutionnels/joue-les-tours.jpg')}} alt=" TestFailed " width="250" height="82" hspace="10"   title="your text" /></td>
@@ -153,7 +158,6 @@ td{font-size: large;
   float: right;
 }
 
-
 .couleur {
     background-color : #add8e6;;
 }
@@ -169,3 +173,4 @@ body, html {
 </style>
 
 </html>
+

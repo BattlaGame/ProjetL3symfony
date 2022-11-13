@@ -102,7 +102,7 @@ class UserController extends AbstractController
     public function bloquer(User $user, UserRepository $userRepository): Response
     {
         
-        $user->setRoles(["ROLE_BOQUER"]);
+        $user->setRoles(["ROLE_BLOQUER"]);
         $userRepository->save($user, true);
         return $this->render('home/index.html.twig', [
             'users' => $userRepository->findAll(),
