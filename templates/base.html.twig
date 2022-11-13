@@ -74,9 +74,11 @@
                     
                 </tr>
             </table>
-    </body>  
+    </body>
+    <br><br><br><br><br><br><br>
 {% if is_granted('ROLE_BLOQUER') %}
-    <p> Vous n'avez pas accès car vous êtes bloqué </p>
+    <h1> Vous n'avez pas accès car vous êtes bloqué </h1>
+    <br><br><br><br><br><br><br>
 {% else %}  
         {% block body %}{% endblock %}
 {% endif %}  
